@@ -5,35 +5,26 @@
 // Receptų masyvas
 const receptai = [
   {
-    name: 'Vištiena su salotom',
-    ingredients: {
-      Vištiena: 100,
-      Brokoliai: 200,
-      Pomidorai: 100,
-      Salotos: 150,
-      Druska: 20,
-      Aliejus: 15,
-      Citrina: 1,
-    },
+    Vištiena: 100,
+    Brokoliai: 200,
+    Pomidorai: 100,
+    Salotos: 150,
+    Druska: 20,
+    Aliejus: 15,
+    Citrina: 1,
   },
   {
-    name: 'Tortas su mėlynėmis',
-    ingredients: {
-      Miltai: 250,
-      Kiaušiniai: 1,
-      Mėlynės: 100,
-      Cukrus: 50,
-    },
+    Miltai: 250,
+    Kiaušiniai: 1,
+    Mėlynės: 100,
+    Cukrus: 50,
   },
   {
-    name: 'Makaronai su mėsa',
-    ingredients: {
-      Mėsa: 300,
-      Makaronai: 700,
-      Sūris: 200,
-      Druska: 20,
-      Grietinė: 100,
-    },
+    Mėsa: 300,
+    Makaronai: 700,
+    Sūris: 200,
+    Druska: 20,
+    Grietinė: 100,
   },
 ];
 
@@ -68,10 +59,10 @@ document.getElementById('3').addEventListener('click', () => {
 });
 
 function displayRecipe(recipe) {
-  let displayString = `<h3>${receptai[recipe].name}</h3>`;
+  let displayString = '';
 
-  for (let item in receptai[recipe].ingredients) {
-    displayString += `${item}: <strong>${receptai[recipe].ingredients[item]}</strong><br>`;
+  for (let item in receptai[recipe]) {
+    displayString += `${item}: <strong>${receptai[recipe][item]}</strong><br>`;
   }
 
   document.getElementById('displayScreen').innerHTML = displayString;
