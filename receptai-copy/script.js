@@ -1,6 +1,6 @@
 // 1. Pasirenkam receptą paspausdami ant jo
 // 2. Atvaizduojame recepto sudėtį
-// 3. Kai įvedu porciju skaičių ir mygtuku paspaudu pateikti apskaiciuoju porcijų skaickių
+// 3. Kai įvedu porciju skaičių ir mygtuku paspaudziu pateikti apskaiciuoju porcijų skaickių
 
 // Receptų masyvas
 const receptai = [
