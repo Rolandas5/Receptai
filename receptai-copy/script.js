@@ -31,12 +31,14 @@ const receptai = [
 let activeRecipe = null;
 let amount = 1;
 
+// Funkcija, kuri paslepia visus SVG
 function hideAll() {
   document.getElementById('svg1').classList.add('hide');
   document.getElementById('svg2').classList.add('hide');
   document.getElementById('svg3').classList.add('hide');
 }
 
+// Susitvarkau, kad SVG rodytu chekmark
 document.getElementById('1').addEventListener('click', () => {
   hideAll();
   document.getElementById('svg1').classList.remove('hide');
@@ -57,12 +59,21 @@ document.getElementById('3').addEventListener('click', () => {
   activeRecipe = 2;
   displayRecipe(activeRecipe);
 });
+//
+
+// Reiksmes ivedimas ir mygtuko paspaudimas
+function updateRecipeAmount() {
+  const inputValue = parseInt(document.getElementById('portionInput').value);
+  amount = inputValue;
+  displayRecipe(activeRecipe);
+}
 
 function displayRecipe(recipe) {
   let displayString = '';
 
   for (let item in receptai[recipe]) {
-    displayString += `${item}: <strong>${receptai[recipe][item]}</strong><br>`;
+    const itemAmount = receptai[recipe][item];
+    displayString += `${item}: <strong>${itemAmount * amount}</strong><br>`;
   }
 
   document.getElementById('displayScreen').innerHTML = displayString;
